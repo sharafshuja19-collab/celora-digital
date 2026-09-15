@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celora Digital — خدمات دیجیتال</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#0063ee;--dark:#0a1220;--muted:#667085;--line:#e8edf5;--bg:#f7f9fc}
+body{font-family:Vazirmatn,Arial,sans-serif;background:#fff;color:var(--dark);line-height:1.7}
+button,input{font:inherit} button{cursor:pointer;border:0}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid #eef2f7}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{font-size:24px;font-weight:800;letter-spacing:-1px;color:var(--dark)}.logo span{color:var(--blue)}
+nav{display:flex;gap:28px}nav a{text-decoration:none;color:#475467;font-size:14px;font-weight:600}nav a:hover{color:var(--blue)}
+.actions{display:flex;align-items:center;gap:10px}.cart{position:relative;background:#f1f6ff;color:var(--blue);width:42px;height:42px;border-radius:13px;font-size:19px}.badge{position:absolute;top:-5px;left:-4px;background:var(--blue);color:#fff;font-size:10px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center}
+.hero{padding:80px 0 55px;background:radial-gradient(circle at 15% 25%,#e7f0ff 0,transparent 32%),linear-gradient(135deg,#fff,#f7faff)}
+.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:60px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#edf4ff;color:var(--blue);padding:7px 13px;border-radius:30px;font-size:12px;font-weight:700;margin-bottom:18px}
+h1{font-size:clamp(38px,5vw,64px);line-height:1.2;letter-spacing:-2px;margin-bottom:18px}h1 span{color:var(--blue)}
+.hero p{color:var(--muted);font-size:17px;max-width:600px;margin-bottom:28px}
+.btn{padding:13px 21px;border-radius:13px;font-weight:700;font-size:14px}.primary{background:var(--blue);color:#fff;box-shadow:0 12px 30px rgba(0,99,238,.22)}.secondary{background:#fff;color:var(--dark);border:1px solid var(--line);margin-right:8px}
+.visual{min-height:350px;border-radius:30px;background:linear-gradient(145deg,#fff,#edf4ff);border:1px solid #e2ebfa;box-shadow:0 25px 70px rgba(31,78,121,.12);position:relative;overflow:hidden;padding:28px}
+.visual:before,.visual:after{content:"";position:absolute;border-radius:50%;background:#0063ee;opacity:.08}.visual:before{width:260px;height:260px;top:-100px;right:-80px}.visual:after{width:180px;height:180px;bottom:-70px;left:-50px}
+.card3d{position:relative;z-index:2;background:#fff;border:1px solid #e5ebf3;border-radius:23px;padding:25px;box-shadow:0 20px 45px rgba(25,50,90,.12);transform:rotate(-4deg);margin-top:25px}
+.card3d .big{font-size:31px;font-weight:800}.blueLine{height:8px;width:95px;background:var(--blue);border-radius:10px;margin:15px 0}.mini{display:flex;gap:9px}.pill{height:11px;border-radius:10px;background:#e8edf5;flex:1}
+.section{padding:70px 0}.sectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}.sectionHead h2{font-size:30px;letter-spacing:-1px}.sectionHead p{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{border:1px solid var(--line);border-radius:20px;padding:18px;background:#fff;transition:.2s}.product:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(20,45,80,.08)}
+.icon{height:150px;border-radius:15px;background:linear-gradient(145deg,#f3f7ff,#e8f0ff);display:grid;place-items:center;font-size:46px;color:var(--blue);margin-bottom:16px}.product h3{font-size:16px;margin-bottom:5px}.product p{font-size:12px;color:var(--muted);min-height:44px}.price{display:flex;justify-content:space-between;align-items:center;margin-top:13px}.price strong{font-size:17px}.add{background:#edf4ff;color:var(--blue);width:38px;height:38px;border-radius:11px;font-size:20px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:var(--bg);border-radius:20px;padding:24px}.feature b{display:block;margin:8px 0 4px}.feature p{color:var(--muted);font-size:13px}
+footer{background:#09111f;color:#fff;padding:45px 0 25px;margin-top:30px}.footerGrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.footerLogo{font-size:24px;font-weight:800}.footerLogo span{color:#55a0ff}.footerText{color:#aab5c5;font-size:13px;margin-top:10px;max-width:390px}.footerTitle{font-weight:700;margin-bottom:12px}.footer a{display:block;color:#aab5c5;text-decoration:none;font-size:13px;margin:6px 0}.copy{border-top:1px solid #1e2a3d;margin-top:30px;padding-top:18px;color:#8d99aa;font-size:11px}
+.drawer{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:50;display:none}.drawer.show{display:block}.panel{position:absolute;left:0;top:0;height:100%;width:min(410px,94%);background:#fff;padding:24px;overflow:auto}.panelHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.close{background:#f2f4f7;width:38px;height:38px;border-radius:10px}.cartItem{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.cartItem .thumb{width:55px;height:55px;background:#edf4ff;border-radius:12px;display:grid;place-items:center}.cartItem h4{font-size:13px}.cartItem small{color:var(--muted)}.total{display:flex;justify-content:space-between;margin:25px 0;font-weight:800}.full{width:100%}.empty{text-align:center;color:var(--muted);padding:60px 0}
+@media(max-width:850px){nav{display:none}.heroGrid{grid-template-columns:1fr}.visual{min-height:280px}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.footerGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.hero{padding-top:50px}.section{padding:50px 0}.secondary{margin-right:0;margin-top:9px}.hero .btn{display:block;width:100%}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+  <div class="logo">CELORA <span>DIGITAL</span></div>
+  <nav><a href="#home">خانه</a><a href="#shop">فروشگاه</a><a href="#why">چرا ما؟</a><a href="#contact">پشتیبانی</a></nav>
+  <div class="actions"><button class="cart" onclick="openCart()">🛒<span class="badge" id="count">0</span></button></div>
+</div></header>
+
+<main id="home">
+<section class="hero"><div class="container heroGrid">
+  <div><div class="eyebrow">✦ خدمات دیجیتال، ساده و سریع</div>
+    <h1>دنیای خدمات دیجیتال<br><span>در یک جا.</span></h1>
+    <p>خرید آسان اشتراک‌های Premium و سرویس‌های دیجیتال با پشتیبانی سریع از Celora Digital.</p>
+    <a class="btn primary" href="#shop" style="display:inline-block;text-decoration:none">مشاهده محصولات</a>
+    <a class="btn secondary" href="#contact" style="display:inline-block;text-decoration:none">ارتباط با ما</a>
+  </div>
+  <div class="visual"><div class="card3d"><div style="font-size:12px;color:#667085">CELORA DIGITAL</div><div class="big">Premium<br><span style="color:#0063ee">Digital Services</span></div><div class="blueLine"></div><div class="mini"><i class="pill"></i><i class="pill"></i><i class="pill"></i></div></div></div>
+</div></section>
+
+<section class="section" id="shop"><div class="container">
+  <div class="sectionHead"><div><h2>محصولات محبوب</h2><p>سرویس مورد نیازت را انتخاب کن.</p></div></div>
+  <div class="grid" id="products"></div>
+</div></section>
+
+<section class="section" id="why" style="padding-top:10px"><div class="container">
+ <div class="sectionHead"><div><h2>چرا Celora Digital؟</h2><p>تجربه‌ای ساده برای خرید خدمات دیجیتال.</p></div></div>
+ <div class="features">
+  <div class="feature">⚡<b>تحویل سریع</b><p>سفارش‌ها با روند ساده و سریع پیگیری می‌شوند.</p></div>
+  <div class="feature">🔒<b>پرداخت امن</b><p>اطلاعات سفارش شما با دقت مدیریت می‌شود.</p></div>
+  <div class="feature">💬<b>پشتیبانی</b><p>برای سوالات و پیگیری سفارش، کنار شما هستیم.</p></div>
+ </div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="container">
+ <div class="footerGrid"><div><div class="footerLogo">CELORA <span>DIGITAL</span></div><p class="footerText">مرجع خدمات و سرویس‌های دیجیتال. خرید آسان، تجربه حرفه‌ای.</p></div>
+ <div><div class="footerTitle">دسترسی سریع</div><a href="#home">خانه</a><a href="#shop">فروشگاه</a><a href="#why">چرا ما؟</a></div>
+ <div><div class="footerTitle">پشتیبانی</div><a href="https://wa.me/" target="_blank">WhatsApp</a><a href="mailto:support@celora.digital">Email</a></div></div>
+ <div class="copy">© 2026 Celora Digital — تمامی حقوق محفوظ است.</div>
+</div></footer>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><div class="panel"><div class="panelHead"><h2>سبد خرید</h2><button class="close" onclick="closeCart()">×</button></div><div id="cartItems"></div><div id="cartBottom"></div></div></div>
+
+<script>
+const products=[
+ {id:1,name:"اشتراک Premium",desc:"پلن دیجیتال Premium",price:12,icon:"✦"},
+ {id:2,name:"سرویس AI Premium",desc:"دسترسی به سرویس‌های هوش مصنوعی",price:15,icon:"◈"},
+ {id:3,name:"اشتراک طراحی",desc:"ابزارهای حرفه‌ای طراحی",price:10,icon:"✎"},
+ {id:4,name:"سرویس Streaming",desc:"اشتراک سرگرمی دیجیتال",price:9,icon:"▶"}
+];
+let cart=[];
+const fmt=n=>"$"+n.toFixed(2);
+function renderProducts(){document.getElementById("products").innerHTML=products.map(p=>`
+<div class="product"><div class="icon">${p.icon}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="price"><strong>${fmt(p.price)}</strong><button class="add" onclick="add(${p.id})">+</button></div></div>`).join("")}
+function add(id){const p=products.find(x=>x.id===id);cart.push(p);update();openCart()}
+function remove(i){cart.splice(i,1);update()}
+function update(){document.getElementById("count").textContent=cart.length;const box=document.getElementById("cartItems");const bottom=document.getElementById("cartBottom");
+ if(!cart.length){box.innerHTML='<div class="empty">سبد خرید شما خالی است.</div>';bottom.innerHTML="";return}
+ box.innerHTML=cart.map((p,i)=>`<div class="cartItem"><div class="thumb">${p.icon}</div><div style="flex:1"><h4>${p.name}</h4><small>${fmt(p.price)}</small></div><button onclick="remove(${i})" style="background:none;color:#98a2b3">حذف</button></div>`).join("");
+ const total=cart.reduce((a,p)=>a+p.price,0);
+ bottom.innerHTML=`<div class="total"><span>مجموع</span><span>${fmt(total)}</span></div><button class="btn primary full" onclick="checkout()">ادامه و ثبت سفارش</button>`;
+}
+function openCart(){document.getElementById("drawer").classList.add("show");update()}
+function closeCart(){document.getElementById("drawer").classList.remove("show")}
+function checkout(){alert("نسخه نمایشی: مرحله بعدی اتصال درگاه پرداخت و سیستم ثبت سفارش است.");}
+renderProducts();update();
+</script>
+</body>
+</html>
